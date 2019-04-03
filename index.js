@@ -40,6 +40,36 @@ server.post("/api/register", (req, res) => {
     }
 });
 
+// POST /api/login
+
+server.post("/api/login", (req, res) => {
+    const creds = req.body;
+    db.findUserByName(creds.username)
+        .then(user => {
+        if (user && bcrypt.compareSync(creds.password, user.password)) {
+            const token = mw.generateToken(creds);
+            res.status(200).json({ message: `Hello and welcome ${user.username}`, token });
+        } else {
+            res.status(401).send("Please, do not enter. Thank you, very much.");
+        }
+        })
+        .catch(err => {
+        res.status(500).send(err);
+        });
+    });
+      
+// GET /api/users
+
+server.get("/api/users", mw.protected, (req, res) => {
+db.findUsers()
+    .then(users => {
+    res.json(users);
+    })
+    .catch(err => {
+    res.send(err);
+    });
+});
+
 server.get('/*', (req, res) => {
     res.send('Hello world!');
 });
