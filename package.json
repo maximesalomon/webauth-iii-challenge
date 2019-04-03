@@ -18,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/maximesalomon/webauth-iii-challenge/issues"
   },
-  "homepage": "https://github.com/maximesalomon/webauth-iii-challenge#readme"
+  "homepage": "https://github.com/maximesalomon/webauth-iii-challenge#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "knex": "^0.16.3",
+    "sqlite3": "^4.0.6"
+  }
 }
