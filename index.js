@@ -70,7 +70,7 @@ db.findUsers()
     });
 });
 
-server.get('/*', (req, res) => {
+server.get('/', (req, res) => {
     res.send('Hello world!');
 });
 
