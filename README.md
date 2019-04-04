@@ -45,6 +45,8 @@ This project has two parts, you will work on it over two days in the full time c
   - the `/users` route should read the token from local storage and make a `GET` request to the `/api/users` route on the API attaching the token as the value of the `Authorization` header.
   - provide a button to `sign out` that will remove the token from local storage.
 
+MVP ✅
+
 ## Stretch Problem
 
 - add the code necessary so that when a client makes a `GET` request to `/api/users` the server only returns documents with the `same department` as the logged in user. For example if the logged in user belongs to the finance department, then only users with the _finance_ department should be returned; if the logged in user is in _sales_ only users on the sales department should be returned.
